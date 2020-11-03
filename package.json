@@ -1,0 +1,22 @@
+{
+  "name": "verkefni-9",
+  "version": "1.0.0",
+  "description": "## Lýsing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Selph/vef1-2020-verkefni-9.git"
+  },
+  "author": "Árni Þór Sörensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Selph/vef1-2020-verkefni-9/issues"
+  },
+  "homepage": "https://github.com/Selph/vef1-2020-verkefni-9#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13"
+  }
+}
