@@ -4,11 +4,10 @@
   "description": "## Lýsing",
   "main": "index.js",
   "scripts": {
-    "dev": "browser-sync start --server --files index.html dist/bundle.js styles.css",
-    "rollup": "rollup -c",
     "rollup-watch": "rollup -c -w",
+    "dev": "browser-sync start --server --files index.html dist/bundle.js styles.css",
     "superdev": "concurrently \"browser-sync start --server --files index.html dist/bundle.js styles.css\" \"rollup -c -w\"",
-    "test": "eslint ./src/lib/earthquakes.js ./src/lib/map.js ./src/lib/utils.js ./src/index.js"
+    "test": "eslint src/**"
   },
   "repository": {
     "type": "git",
