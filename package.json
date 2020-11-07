@@ -4,7 +4,11 @@
   "description": "## Lýsing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "browser-sync start --server --files index.html dist/bundle.js styles.css",
+    "rollup": "rollup -c",
+    "rollup-watch": "rollup -c -w",
+    "superdev": "concurrently \"browser-sync start --server --files index.html dist/bundle.js styles.css\" \"rollup -c -w\"",
+    "test": "eslint ./src/lib/earthquakes.js ./src/lib/map.js ./src/lib/utils.js ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,22 @@
   },
   "homepage": "https://github.com/Selph/vef1-2020-verkefni-9#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.13"
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "browser-sync": "^2.26.13",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "rollup": "^2.33.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "date-fns": "^2.16.1",
+    "leaflet": "^1.7.1"
   }
 }

@@ -1,6 +1,10 @@
-import { el, element, formatDate } from './lib/utils';
-// importa öðru sem þarf...
+// eslint-disable-next-line import/no-unresolved
+import { init } from './lib/map';
+// eslint-disable-next-line import/no-unresolved
+import { fetchEarthquakes } from './lib/earthquakes';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // Hér er allt „vírað“ saman
+  init();
+  fetchEarthquakes();
 });
