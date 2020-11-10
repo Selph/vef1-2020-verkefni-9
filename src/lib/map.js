@@ -2,9 +2,9 @@
 import L from 'leaflet';
 
 let map;
-export function createMarkers(coordinates, titill, timi, hlekkur, hlekkurTexti, button) {
-  const fylki = [coordinates[1], coordinates[0]];
-  const marker = L.marker(fylki).addTo(map);
+
+function bindMarker(coordinates, titill, timi, hlekkur, hlekkurTexti) {
+  const marker = L.marker(coordinates).addTo(map);
   marker.bindPopup(`
     <b>${titill}</b>
     <br>
@@ -14,8 +14,11 @@ export function createMarkers(coordinates, titill, timi, hlekkur, hlekkurTexti, 
     <br>
     <a href="${hlekkur}">${hlekkurTexti}</a>
   `);
+}
+
+function bindPopup(coordinates, titill, timi, hlekkur, hlekkurTexti, button) {
   const popup = L.popup({});
-  popup.setLatLng(fylki);
+  popup.setLatLng(coordinates);
   popup.setContent(`
     <b>${titill}</b>
     <br>
@@ -28,6 +31,12 @@ export function createMarkers(coordinates, titill, timi, hlekkur, hlekkurTexti, 
   button.addEventListener('click', () => {
     popup.openOn(map);
   });
+}
+
+export function createMarkers(coordinates, titill, timi, hlekkur, hlekkurTexti, button) {
+  const fylki = [coordinates[1], coordinates[0]];
+  bindMarker(fylki, titill, timi, hlekkur, hlekkurTexti);
+  bindPopup(fylki, titill, timi, hlekkur, hlekkurTexti, button);
 }
 
 export function init() {
