@@ -3,11 +3,7 @@ import L from 'leaflet';
 
 let map;
 export function createMarkers(coordinates, titill, timi, hlekkur, hlekkurTexti, button) {
-  const fylki = [];
-  for (let i = 1; i >= 0; i -= 1) {
-    const stadsetning = coordinates[i];
-    fylki.push(stadsetning);
-  }
+  const fylki = [coordinates[1], coordinates[0]];
   const marker = L.marker(fylki).addTo(map);
   marker.bindPopup(`
     <b>${titill}</b>
